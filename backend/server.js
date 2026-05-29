@@ -32,3 +32,7 @@ app.listen(PORT, () => {
 });
 
 app.use('/api/dashboard', dashboardRoutes);
+
+console.log("HOST =", process.env.DB_HOST);
+console.log("DB =", process.env.DB_NAME);
+console.log("USER =", process.env.DB_USER);
