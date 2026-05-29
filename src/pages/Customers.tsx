@@ -38,7 +38,7 @@ export const Customers: React.FC = () => {
   );
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/customers")
+    fetch("https://smart-billing-system-xmf3.onrender.com/api/customers")
       .then((res) => res.json())
       .then((data) => {
 
@@ -65,8 +65,8 @@ export const Customers: React.FC = () => {
       const method = editingId ? "PUT" : "POST";
 
       const url = editingId
-        ? `http://localhost:5000/api/customers/${editingId}`
-        : "http://localhost:5000/api/customers";
+        ? `https://smart-billing-system-xmf3.onrender.com/api/customers/${editingId}`
+        : "https://smart-billing-system-xmf3.onrender.com/api/customers";
 
       const response = await fetch(url, {
 
@@ -120,7 +120,7 @@ export const Customers: React.FC = () => {
       console.log("Deleting customer:", deleteId);
 
       await fetch(
-        `http://localhost:5000/api/customers/${deleteId}`,
+        `https://smart-billing-system-xmf3.onrender.com/api/customers/${deleteId}`,
         {
           method: "DELETE"
         }

@@ -39,7 +39,7 @@ export const Reports: React.FC = () => {
     try {
 
       const res = await fetch(
-        'http://localhost:5000/api/dashboard/sales-report'
+        'https://smart-billing-system-xmf3.onrender.com/api/dashboard/sales-report'
       );
 
       const data = await res.json();
@@ -99,7 +99,7 @@ export const Reports: React.FC = () => {
 
     try {
       const res = await fetch(
-        'http://localhost:5000/api/dashboard/daily-sales'
+        'https://smart-billing-system-xmf3.onrender.com/api/dashboard/daily-sales'
       );
       const data = await res.json();
       setDailyData(data);
@@ -115,7 +115,7 @@ export const Reports: React.FC = () => {
   try {
 
     const res = await fetch(
-      'http://localhost:5000/api/dashboard/sales-by-category'
+      'https://smart-billing-system-xmf3.onrender.com/api/dashboard/sales-by-category'
     );
     const data = await res.json();
     // Convert value to number

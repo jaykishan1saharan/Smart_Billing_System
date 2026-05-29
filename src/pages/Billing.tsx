@@ -30,7 +30,7 @@ export const Billing: React.FC = () => {
 
   useEffect(() => {
 
-    fetch("http://localhost:5000/api/products")
+    fetch("https://smart-billing-system-xmf3.onrender.com/api/products")
       .then(res => res.json())
       .then(data => {
 
@@ -52,7 +52,7 @@ export const Billing: React.FC = () => {
 
   useEffect(() => {
 
-    fetch("http://localhost:5000/api/customers")
+    fetch("https://smart-billing-system-xmf3.onrender.com/api/customers")
       .then(res => res.json())
       .then(data => {
 
@@ -135,7 +135,7 @@ export const Billing: React.FC = () => {
       console.log("Saving sale:", saleData);
 
       const response = await fetch(
-        "http://localhost:5000/api/sales",
+        "https://smart-billing-system-xmf3.onrender.com/api/sales",
         {
           method: "POST",
           headers: {

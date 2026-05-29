@@ -44,7 +44,7 @@ export const Products: React.FC = () => {
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/products")
+    fetch("https://smart-billing-system-xmf3.onrender.com/api/products")
       .then((res) => res.json())
       .then((data) => {
         const formatted = data.map((item: any) => ({
@@ -88,8 +88,8 @@ export const Products: React.FC = () => {
       const method = editingId ? "PUT" : "POST";
 
       const url = editingId
-        ? `http://localhost:5000/api/products/${editingId}`
-        : "http://localhost:5000/api/products";
+        ? `https://smart-billing-system-xmf3.onrender.com/api/products/${editingId}`
+        : "https://smart-billing-system-xmf3.onrender.com/api/products";
 
       const response = await fetch(url, {
         method: method,
@@ -143,7 +143,7 @@ export const Products: React.FC = () => {
       console.log("Deleting:", deleteId);
 
       await fetch(
-        `http://localhost:5000/api/products/${deleteId}`,
+        `https://smart-billing-system-xmf3.onrender.com/api/products/${deleteId}`,
         {
           method: "DELETE"
         }

@@ -27,7 +27,7 @@ export const Dashboard: React.FC = () => {
   const handleRestock = async (productId: number) => {
     try {
       await fetch(
-        `http://localhost:5000/api/products/restock/${productId}`,
+        `https://smart-billing-system-xmf3.onrender.com/api/products/restock/${productId}`,
         {
           method: "PUT"
         }
@@ -46,7 +46,7 @@ export const Dashboard: React.FC = () => {
 
     try {
       const res = await fetch(
-        "http://localhost:5000/api/dashboard/low-stock-products"
+        "https://smart-billing-system-xmf3.onrender.com/api/dashboard/low-stock-products"
       );
       const data = await res.json();
       setLowStockProducts(data);
@@ -59,35 +59,35 @@ export const Dashboard: React.FC = () => {
 
   useEffect(() => {
     // Today's Sales
-    fetch("http://localhost:5000/api/dashboard/today-sales")
+    fetch("https://smart-billing-system-xmf3.onrender.com/api/dashboard/today-sales")
       .then(res => res.json())
       .then(data => {
         setTodaySales(data.totalSales || 0);
       });
 
     // Today's Orders
-    fetch("http://localhost:5000/api/dashboard/today-orders")
+    fetch("https://smart-billing-system-xmf3.onrender.com/api/dashboard/today-orders")
       .then(res => res.json())
       .then(data => {
         setTotalOrders(data.totalOrders || 0);
       });
 
     // Total Products
-    fetch("http://localhost:5000/api/dashboard/total-products")
+    fetch("https://smart-billing-system-xmf3.onrender.com/api/dashboard/total-products")
       .then(res => res.json())
       .then(data => {
         setTotalProducts(data.totalProducts || 0);
       });
 
     // Low Stock Items
-    fetch("http://localhost:5000/api/dashboard/low-stock")
+    fetch("https://smart-billing-system-xmf3.onrender.com/api/dashboard/low-stock")
       .then(res => res.json())
       .then(data => {
         setLowStockCount(data.lowStockCount || 0);
       });
 
     // Recent Transactions
-    fetch("http://localhost:5000/api/dashboard/recent-transactions")
+    fetch("https://smart-billing-system-xmf3.onrender.com/api/dashboard/recent-transactions")
       .then(res => res.json())
       .then(data => {
 
@@ -97,14 +97,14 @@ export const Dashboard: React.FC = () => {
 
 
     // Monthly Revenue
-    fetch("http://localhost:5000/api/dashboard/monthly-revenue")
+    fetch("https://smart-billing-system-xmf3.onrender.com/api/dashboard/monthly-revenue")
       .then(res => res.json())
       .then(data => {
         setMonthlyRevenue(data || []);
       });
 
     // Top Selling Products
-    fetch("http://localhost:5000/api/dashboard/top-products")
+    fetch("https://smart-billing-system-xmf3.onrender.com/api/dashboard/top-products")
       .then(res => res.json())
       .then(data => {
 
